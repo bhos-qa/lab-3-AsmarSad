@@ -1,6 +1,7 @@
 plugins {
     id("java")
-    id ("jacoco")
+    id("jacoco")
+    id("org.sonarqube") version "4.0.0.2929"
 }
 
 group = "org.example"
@@ -10,10 +11,13 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
+
 jacoco {
     toolVersion = "0.8.7" // Make sure the Jacoco version is correct
 }
@@ -28,4 +32,11 @@ tasks.jacocoTestReport {
 // Ensure Jacoco reports are generated after tests
 tasks.test {
     finalizedBy(tasks.jacocoTestReport) // Run jacocoTestReport after test
+}
+sonarqube {
+    properties {
+        property("sonar.projectKey", "lab-3-AsmarSad")
+        property("sonar.organization", "bhos-qa")
+        property("sonar.host.url", "https://sonarcloud.io")// Correct way to access environment variable in Kotlin
+    }
 }
