@@ -2,4 +2,3 @@
 
 ![Java CI](https://github.com/bhos-qa/lab-3-AsmarSad/actions/workflows/ci.yml/badge.svg)
 
-![SonarCloud Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhos-qa_lab-3-AsmarSad&metric=alert_status)
