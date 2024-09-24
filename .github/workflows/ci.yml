@@ -39,8 +39,8 @@ jobs:
       - name: Upload code coverage report to SonarCloud
         uses: sonarsource/sonarcloud-github-action@v1.6
         with:
-          projectKey: your_project_key
-          organization: your_organization_key
+          projectKey: lab-3-AsmarSad
+          organization: bhos-qa
           token: ${{ secrets.SONAR_TOKEN }}
 
       - name: Upload Jacoco code coverage to SonarCloud
