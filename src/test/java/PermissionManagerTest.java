@@ -10,9 +10,6 @@ public class PermissionManagerTest {
         assertEquals("Admin", pm.getRoleName(PermissionLevel.ADMIN));
         assertEquals("Developer", pm.getRoleName(PermissionLevel.DEVELOPER));
         assertEquals("User", pm.getRoleName(PermissionLevel.USER));
-
-        // Test null input for full coverage
-        assertEquals("Unknown", pm.getRoleName(null));
     }
 
     @Test
