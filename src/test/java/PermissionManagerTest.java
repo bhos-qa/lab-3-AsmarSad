@@ -1,23 +1,35 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PermissionManagerTest {
+public class PermissionManagerTest {
+
     @Test
-    void testGetRoleName() {
+    public void testGetRoleName() {
         PermissionManager pm = new PermissionManager();
+
+        // Test for all enum values
         assertEquals("Admin", pm.getRoleName(PermissionLevel.ADMIN));
         assertEquals("Developer", pm.getRoleName(PermissionLevel.DEVELOPER));
         assertEquals("User", pm.getRoleName(PermissionLevel.USER));
+
+        // Test for null case
+        assertEquals("Unknown", pm.getRoleName(null));
     }
 
     @Test
-    void testSetCurrentLevel() {
+    public void testSetPermissionLevel() {
         PermissionManager pm = new PermissionManager();
-        pm.setCurrentLevel(PermissionLevel.ADMIN);
+
+        // Set and test for ADMIN
+        pm.setPermissionLevel(PermissionLevel.ADMIN);
         assertEquals(PermissionLevel.ADMIN, pm.getCurrentLevel());
-        pm.setCurrentLevel(PermissionLevel.DEVELOPER);
+
+        // Set and test for DEVELOPER
+        pm.setPermissionLevel(PermissionLevel.DEVELOPER);
         assertEquals(PermissionLevel.DEVELOPER, pm.getCurrentLevel());
-        pm.setCurrentLevel(PermissionLevel.USER);
+
+        // Set and test for USER
+        pm.setPermissionLevel(PermissionLevel.USER);
         assertEquals(PermissionLevel.USER, pm.getCurrentLevel());
     }
 }
