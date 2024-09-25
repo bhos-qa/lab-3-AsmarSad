@@ -11,7 +11,7 @@ public class PermissionManagerTest {
         assertEquals("Developer", pm.getRoleName(PermissionLevel.DEVELOPER));
         assertEquals("User", pm.getRoleName(PermissionLevel.USER));
 
-        // Add a test case for the default condition (null input)
+        // Test null input for full coverage
         assertEquals("Unknown", pm.getRoleName(null));
     }
 
