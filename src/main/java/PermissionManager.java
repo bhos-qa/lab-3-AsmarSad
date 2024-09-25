@@ -14,15 +14,17 @@ public class PermissionManager {
             case USER:
                 return "User";
             default:
-                return "Unknown";
+                return "Unknown"; // Default case
         }
     }
 
     public void setPermissionLevel(PermissionLevel level) {
-        this.mCurrentLevel = level;
+        if (level != null) { // Add null check to avoid setting null
+            this.mCurrentLevel = level;
+        }
     }
 
-    public PermissionLevel getCurrentLevel(){
+    public PermissionLevel getCurrentLevel() {
         return mCurrentLevel;
     }
 }
