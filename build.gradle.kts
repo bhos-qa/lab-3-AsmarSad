@@ -35,8 +35,9 @@ tasks.test {
 }
 sonarqube {
     properties {
-        property("sonar.projectKey", "lab-3-AsmarSad")
-        property("sonar.organization", "bhos-qa")
-        property("sonar.host.url", "https://sonarcloud.io")// Correct way to access environment variable in Kotlin
+        property ("sonar.projectKey", "bhos-qa_lab-3-AsmarSad")
+        property( "sonar.organization", "bhos-qa")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.login", project.findProperty("sonar.login") ?: "")
     }
 }
