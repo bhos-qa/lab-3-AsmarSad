@@ -1,11 +1,7 @@
 public class PermissionManager {
-
-    PermissionLevel mCurrentLevel = PermissionLevel.USER;
+    private PermissionLevel mCurrentLevel = PermissionLevel.USER;
 
     public String getRoleName(PermissionLevel level) {
-        if (level == null) {
-            return "Unknown"; // Explicitly handle null case
-        }
         switch (level) {
             case ADMIN:
                 return "Admin";
@@ -14,15 +10,15 @@ public class PermissionManager {
             case USER:
                 return "User";
             default:
-                return "Unknown";
+                throw new IllegalArgumentException("Unknown permission level: " + level);
         }
     }
 
-    public void setPermissionLevel(PermissionLevel level) {
+    public void setCurrentLevel(PermissionLevel level) {
         this.mCurrentLevel = level;
     }
 
-    public PermissionLevel getCurrentLevel(){
+    public PermissionLevel getCurrentLevel() {
         return mCurrentLevel;
     }
 }
